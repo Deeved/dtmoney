@@ -4,6 +4,8 @@ import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { GlobalStyles } from "./sytles/global";
 
+Modal.setAppElement("#root");
+
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
     useState(false);
@@ -18,7 +20,8 @@ export function App() {
 
   return (
     <>
-      <Header />
+      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
+
       <Dashboard />
 
       <Modal
